@@ -1,6 +1,8 @@
+let contador = 0;
 exports.handler = async (event, context) => {
+    contador++;
     return {
         statusCode: 200,
-        body: '{"a": 10}'
+        body: `{"contador": ${contador}}`
     };
 };
