@@ -1,0 +1,22 @@
+<!-- pagina html pra criar novo usuario -->
+<!-- TODO: deixar isso minimamente decente -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nova conta</title>
+</head>
+
+<body>
+    <form method="post" action="/api/auth/register">
+        <input id="username" name="username"></input>
+        <input id="password" name="password" type="password"></input>
+        <button type="submit">criar conta</button>
+    </form>
+</body>
+
+</html>
