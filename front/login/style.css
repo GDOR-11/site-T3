@@ -6,22 +6,19 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: #f0f2f5; /* Fundo cinza claro */
-}
-
 /* Container que centraliza o card na tela */
 .main-container {
+    background-color: #f0f2f5; /* Fundo cinza claro */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 /* Estilo do Card Branco */
 .register-card {
     background-color: #ffffff;
     padding: 40px;
+    margin: 50px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     width: 100%;
