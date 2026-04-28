@@ -12,7 +12,7 @@ header {
     min-height: 10em;
     padding: 1.5em;
     box-sizing: border-box;
-    background-color: blue;
+    background-color: rgb(63, 63, 233);
 
     display: flex;
     align-items: center;
@@ -30,9 +30,12 @@ header {
 }
 
 #header-title {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
     flex-grow: 1;
     font-size: 2.5em;
     text-align: center;
+
 }
 
 #auth-links {
@@ -65,7 +68,7 @@ header {
     }
 }
 
-#navbar {
+#navbar {   
     width: 100%;
     position: sticky;
     top: 0;
@@ -76,7 +79,7 @@ header {
     padding: 1.5em 2em;
     margin: 0em;
     box-sizing: border-box;
-    background-color: #4060f0;
+    background-color: #162c91;
     list-style: none;
 
     display: flex;
@@ -120,3 +123,24 @@ footer {
 #footer-logo {
     height: 100%;
 }
+#home-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    min-height: 60vh;      
+    padding: 40px 20px;
+}
+
+.hero-image-container {
+    width: 60%;
+    max-width: 800px;        
+    text-align: center;
+}
+
+#main-photo {
+    width: 100%;            
+    height: auto;            
+    border-radius: 15px;    
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+}
+ 

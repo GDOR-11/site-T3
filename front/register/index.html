@@ -2,21 +2,39 @@
 <!-- TODO: deixar isso minimamente decente -->
 
 <!DOCTYPE html>
-
-<html>
-
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nova conta</title>
+    <title>Criar Conta | Nova Conta</title>
+    <link rel="stylesheet" href="register_style.css">
 </head>
-
 <body>
-    <form method="post" action="/api/auth/register">
-        <input id="username" name="username"></input>
-        <input id="password" name="password" type="password"></input>
-        <button type="submit">criar conta</button>
-    </form>
-</body>
 
+    <main class="register-container">
+        <div class="register-card">
+            <h1>Criar nova conta</h1>
+            <p>Preencha os dados abaixo para se registar.</p>
+
+            <form method="post" action="/api/auth/register">
+                <div class="input-group">
+                    <label for="username">Utilizador</label>
+                    <input type="text" id="username" name="username" placeholder="Escolha um nome de utilizador" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Palavra-passe</label>
+                    <input type="password" id="password" name="password" placeholder="Crie uma senha forte" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Criar conta</button>
+            </form>
+
+            <div class="footer-links">
+                <span>Já tem uma conta? <a href="../login/index.html">Faça login</a></span>
+            </div>
+        </div>
+    </main>
+
+</body>
 </html>

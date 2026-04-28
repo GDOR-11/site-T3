@@ -1,63 +1,110 @@
-*{
+/* Reset e Fonte */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-button{
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+body {
+    background-color: #f0f2f5; /* Fundo cinza claro */
 }
 
-button:hover{
-    background-color: #FFF;
-    color: #000;
-    border: 1px solid #000;
-    transition: all 0.3s ease;
-}
-
-main{   
+/* Container que centraliza o card na tela */
+.main-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 70vh;
-}
-
-.card{
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 100vh;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 0 auto;
-    height: 300px;
-}
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    background-color: #FFF;
 }
 
-input{
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Estilo do Card Branco */
+.register-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     width: 100%;
-}   
+    max-width: 400px;
+    text-align: center;
+}
 
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+h1 {
+    font-size: 26px;
+    color: #1c1e21;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #606770;
+    margin-bottom: 24px;
+}
+
+/* Alinhamento do formulário */
+form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4b4f56;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2); /* Efeito de brilho ao clicar */
+}
+
+/* Botão Azul */
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #166fe5;
+}
+
+/* Texto de rodapé */
+.login-footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #606770;
+}
+
+.login-footer a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
 }
