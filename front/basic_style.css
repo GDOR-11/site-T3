@@ -132,8 +132,8 @@ footer {
 }
 
 .hero-image-container {
-    width: 100%;
-    max-width: 900px;        
+    width: 60%;
+    max-width: 800px;        
     text-align: center;
 }
 
