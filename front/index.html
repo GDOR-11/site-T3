@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turma 3</title>
+    <title>Turma 30.3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap">
+
     <link rel="stylesheet" href="/basic_style.css">
-    <script type="module" src="/header_script.js"></script>
     <link rel="stylesheet" href="/style.css">
+    <script src="/header_script.js"></script>
 </head>
 
 <body>
     <header>
-        <a id="header-logo-link" href="http://www.ita.br">
-            <img id="header-logo" src="/images/logoita.svg" />
+        <a href="http://www.ita.br" class="logo">
+            <img src="/images/logoita.svg" alt="Logo ITA">
         </a>
-        <h1 id="header-title">Turma 30.3</h1>
-        <div class="auth-section" id="unauthenticated-auth-section">
-            <a class="auth-link" href="/login">Entrar</a>
-            <a class="auth-link" href="/register">Criar conta</a>
-        </div>
-        <div class="auth-section" id="authenticated-auth-section" style="display: none;">
-            <p id="header-username"></p>
-            <a class="auth-link" href="/login">Trocar de usuário</a>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="">Página 1</a></li>
+                <li><a href="">Página 2</a></li>
+                <li><a href="">Página 3</a></li>
+
+                <li class="dropdown">
+                    <p class="dropbtn">Conta</p>
+                    <div class="dropdown-content">
+                        <div class="profile-container">
+                            <p id="header-username">Não conectado</p>
+                        </div>
+                        <a href="/login">Entrar</a>
+                        <a href="/register">Criar conta</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <nav id="navbar">
-        <ul id="navbar-list">
-            <li><a class="navbar-link" href="/pagina1">Página 1</a></li>
-            <li><a class="navbar-link" href="/pagina2">Página 2</a></li>
-            <li><a class="navbar-link" href="/pagina3">Página 3</a></li>
-            <li><a class="navbar-link" href="/pagina4">Página 4</a></li>
-            <li><a class="navbar-link" href="/pagina5">Página 5</a></li>
-        </ul>
-    </nav>
-    <main id="home-content">
-        <div class="hero-image-container">
-            <img src="/images/campus-ita.jpg" alt="Imagem da Turma 30.3" id="main-photo">
-        </div>
+
+    <main>
+        <section class="photo-section">
+            <h2 style="margin-bottom: 40px;"><span style="color: var(--accent-gold);">Conheça a turma</span></h2>
+            <div class="photo-container">
+                <img src="/images/campus-ita.jpg" alt="Foto da Turma" class="class-photo">
+            </div>
+        </section>
     </main>
+
     <footer>
-        <a id="footer-logo-link" href="https://www.itajr.com.br">
-            <img id="footer-logo" src="/images/logo_itajr.svg" />
+        <a href="https://www.itajr.com.br" class="logo">
+            <img src="/images/logo_itajr.svg" alt="Logo ITA">
         </a>
+        <p style="font-size: 12px; opacity: 0.7;">© 2026 Instituto Tecnológico de Aeronáutica - São José dos Campos, SP
+        </p>
+        <nav>
+            <ul>
+                <li><a href="/perguntas_frequentes" style="font-size: 11px;">Perguntas Frequentes</a></li>
+                <li><a href="/contato" style="font-size: 11px;">Contato</a></li>
+            </ul>
+        </nav>
     </footer>
+
 </body>
 
 </html>

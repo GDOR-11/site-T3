@@ -1,6 +1,7 @@
 /* Container que centraliza o card na tela */
 .main-container {
-    background-color: #f0f2f5; /* Fundo cinza claro */
+    background-color: #f0f2f5;
+    /* Fundo cinza claro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +60,8 @@ input {
 
 input:focus {
     border-color: #1877f2;
-    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2); /* Efeito de brilho ao clicar */
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+    /* Efeito de brilho ao clicar */
 }
 
 /* Botão Azul */
@@ -79,21 +81,4 @@ input:focus {
 
 .btn-register:hover {
     background-color: #166fe5;
-}
-
-/* Texto de rodapé */
-.login-footer {
-    margin-top: 25px;
-    font-size: 14px;
-    color: #606770;
-}
-
-.login-footer a {
-    color: #1877f2;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.login-footer a:hover {
-    text-decoration: underline;
 }

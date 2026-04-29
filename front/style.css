@@ -1,20 +1,28 @@
-#home-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;     
-    min-height: 60vh;      
-    padding: 40px 20px;
-}
-
-.hero-image-container {
-    width: 60%;
-    max-width: 800px;        
+.photo-section {
+    padding: 100px 20px;
     text-align: center;
+    background: #0a0e14;
+    color: var(--pure-white);
+    flex: 1;
 }
 
-#main-photo {
-    width: 100%;            
-    height: auto;            
-    border-radius: 15px;    
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+.photo-container {
+    border: 8px solid rgba(197, 160, 89, 0.2);
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 0 50px rgba(197, 160, 89, 0.1);
+    overflow: hidden;
+}
+
+.class-photo {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .photo-section {
+        padding: 50px 15px;
+    }
 }

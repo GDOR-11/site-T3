@@ -73,19 +73,3 @@ input:focus {
 .btn-submit:hover {
     background-color: #166fe5;
 }
-
-.footer-links {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #606770;
-}
-
-.footer-links a {
-    color: #1877f2;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
