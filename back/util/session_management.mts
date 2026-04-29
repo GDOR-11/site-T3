@@ -47,6 +47,21 @@ export function setCookies(context: Context, session_id: string) {
         maxAge: 604800
     });
 }
+export async function clearSession(context: Context) {
+    const session_id = context.cookies.get("__Host-Http-sessionid");
+    if (session_id === undefined) return;
+    await sessions.delete(session_id);
+
+    context.cookies.set({
+        name: "__Host-Http-sessionid",
+        value: session_id,
+        path: "/",
+        secure: true,
+        httpOnly: true,
+        sameSite: "Strict",
+        maxAge: 0
+    });
+}
 export async function validateSessionId(context: Context): Promise<Maybe<string>> {
     const session_id = context.cookies.get("__Host-Http-sessionid");
     if (session_id === undefined) return Maybe.nothing();

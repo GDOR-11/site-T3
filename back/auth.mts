@@ -1,6 +1,6 @@
 import type { Config, Context } from "@netlify/functions";
 import { check_user_password, get_user, register_user } from "./util/user_utils.mts";
-import { generateSessionId, setCookies, validateSessionId } from "./util/session_management.mts";
+import { clearSession, generateSessionId, setCookies, validateSessionId } from "./util/session_management.mts";
 
 const actions: { readonly [action: string]: (req: Request, context: Context) => Promise<Response> } = {
     async register(req, context) {
@@ -66,6 +66,23 @@ const actions: { readonly [action: string]: (req: Request, context: Context) => 
             },
             Nothing() {
                 return new Response("", { status: 200 });
+            }
+        });
+    },
+
+    async logout(_req, context) {
+        return (await validateSessionId(context)).match({
+            Just(_username) {
+                clearSession(context);
+                return new Response("", {
+                    status: 303,
+                    headers: {
+                        "Location": "/"
+                    }
+                });
+            },
+            Nothing() {
+                return new Response("Não autenticado", { status: 401 });
             }
         });
     }
