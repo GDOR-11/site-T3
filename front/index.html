@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turma 3</title>
     <link rel="stylesheet" href="/basic_style.css">
+    <script type="module" src="/header_script.js"></script>
     <link rel="stylesheet" href="/style.css">
 </head>
 
@@ -16,9 +17,13 @@
             <img id="header-logo" src="/images/logoita.svg" />
         </a>
         <h1 id="header-title">Turma 30.3</h1>
-        <div id="auth-links">
+        <div class="auth-section" id="unauthenticated-auth-section">
             <a class="auth-link" href="/login">Entrar</a>
             <a class="auth-link" href="/register">Criar conta</a>
+        </div>
+        <div class="auth-section" id="authenticated-auth-section" style="display: none;">
+            <p id="header-username"></p>
+            <a class="auth-link" href="/login">Trocar de usuário</a>
         </div>
     </header>
     <nav id="navbar">

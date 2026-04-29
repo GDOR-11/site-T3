@@ -24,8 +24,9 @@ header {
     display: flex;
     align-items: center;
 
-    @media screen and (width < 40em) {
+    @media screen and (width < 45em) {
         flex-direction: column;
+        gap: 1em;
     }
 }
 
@@ -45,12 +46,12 @@ header {
 
 }
 
-#auth-links {
+.auth-section {
     display: flex;
     flex-direction: column;
     gap: 1em;
 
-    @media screen and (width < 40em) {
+    @media screen and (width < 45em) {
         flex-direction: row;
         width: 100%;
         gap: 4em;
@@ -69,7 +70,19 @@ header {
     text-decoration: none;
     color: black;
 
-    @media screen and (width < 40em) {
+    @media screen and (width < 45em) {
+        width: max-content;
+    }
+}
+#header-username {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: grey;
+
+    text-align: center;
+
+    @media screen and (width < 45em) {
         width: max-content;
     }
 }
