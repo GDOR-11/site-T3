@@ -12,5 +12,6 @@ fetch("/api/auth/getuser").then(response => response.text()).then(username => {
         document.querySelector("div.dropdown-content > [href=\"/register\"]").remove();
         document.querySelector("div.dropdown-content").append(createLink("Notas", "/notas"));
         document.querySelector("div.dropdown-content").append(createLink("Faltas", "/faltas"));
+        document.querySelector("div.dropdown-content").append(createLink("Sair", "/api/auth/logout"));
     }
 });
