@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turma 3 | ITA</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
 
+    <link rel="stylesheet" href="/basic_style.css">
+    <link rel="stylesheet" href="/login/style.css">
+    <script src="/header_script.js"></script>
+</head>
+
+<body>
     <header>
-        <a href="../index.html" class="logo">
-            <img src="../images/logoita.svg" alt="Logo ITA">
+        <a href="http://www.ita.br" class="logo">
+            <img src="/images/logoita.svg" alt="Logo ITA">
         </a>
         <nav>
             <ul>
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="./index.html">Login</a></li>
-                <li><a href="../register/index.html">Registrar</a></li>
+                <li><a href="/">Início</a></li>
                 <li><a href="">Página 1</a></li>
                 <li><a href="">Página 2</a></li>
                 <li><a href="">Página 3</a></li>
+
+                <li class="dropdown">
+                    <p class="dropbtn">Conta</p>
+                    <div class="dropdown-content">
+                        <div class="profile-container">
+                            <p id="header-username">Não conectado</p>
+                        </div>
+                        <a href="/login">Entrar</a>
+                        <a href="/register">Criar conta</a>
+                    </div>
+                </li>
             </ul>
         </nav>
-    </header>    
-    
+    </header>
+
     <main class="main-container">
         <div class="register-card">
             <h1 id="login-title">Login</h1>
@@ -54,7 +67,8 @@
         <a href="../index.html" class="logo">
             <img src="../images/logo_itajr.svg" alt="Logo ITA">
         </a>
-        <p style="font-size: 12px; opacity: 0.7;">© 2026 Instituto Tecnológico de Aeronáutica - São José dos Campos, SP</p>
+        <p style="font-size: 12px; opacity: 0.7;">© 2026 Instituto Tecnológico de Aeronáutica - São José dos Campos, SP
+        </p>
         <nav>
             <ul>
                 <li><a href="/Pagina_Q&A.html" style="font-size: 11px;">Perguntas Frequentes</a></li>
@@ -64,4 +78,5 @@
     </footer>
 
 </body>
+
 </html>

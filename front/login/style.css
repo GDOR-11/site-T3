@@ -1,96 +1,7 @@
-:root {
-    --primary-blue: #1A2B44;    
-    --accent-gold: #C5A059;     
-    --sky-blue: #0056b3;     
-    --pure-white: #ffffff;
-    --light-gray: #f4f7f6;
-    --glass-bg: rgba(26, 43, 68, 0.85);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-body {
-    color: var(--primary-blue);
-    overflow-x: hidden;
-    background-color: #0a0e14;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-}
-
-header {
-    background-color: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid var(--accent-gold);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo img {
-    height: 45px; 
-    width: auto;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav ul li a {
-    color: var(--pure-white); 
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--accent-gold);
-    transition: width 0.3s;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-nav ul li a:hover {
-    color: var(--accent-gold);
-}
-
-
-
 /* Container que centraliza o card na tela */
 .main-container {
-    background-color: #f0f2f5; /* Fundo cinza claro */
+    background-color: #f0f2f5;
+    /* Fundo cinza claro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +60,8 @@ input {
 
 input:focus {
     border-color: #1877f2;
-    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2); /* Efeito de brilho ao clicar */
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+    /* Efeito de brilho ao clicar */
 }
 
 /* Botão Azul */
@@ -169,52 +81,4 @@ input:focus {
 
 .btn-register:hover {
     background-color: #166fe5;
-}
-
-footer {
-    background-color: var(--primary-blue);
-    padding: 60px 8%;
-    border-top: 4px solid var(--accent-gold);
-    color: var(--pure-white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* --- AJUSTES DE RESPONSIVIDADE (MOBILE) --- */
-@media (max-width: 768px) {
-    header { 
-        padding: 15px 5%; 
-        /* Mantém o logo e o menu lado a lado, ou alinhados de forma mais compacta */
-        flex-direction: column; 
-        gap: 15px; 
-    }
-    
-    .logo img {
-        height: 35px; /* Reduz um pouco o logo no mobile para dar respiro */
-    }
-
-    nav ul {
-        flex-direction: row; /* Mantém os itens lado a lado */
-        flex-wrap: wrap; /* Se a tela for minúscula, ele quebra a linha suavemente em vez de vazar */
-        justify-content: center;
-        gap: 12px; /* Reduz o espaço entre os links */
-        width: 100%;
-    }
-
-    nav ul li a {
-        font-size: 10px; /* Fonte menor para caber na tela */
-        letter-spacing: 0.5px; /* Menos espaço entre as letras do link */
-    }
-
-    .photo-section {
-        padding: 50px 15px;
-    }
-    
-    footer { 
-        padding: 40px 5%; 
-        flex-direction: column; 
-        gap: 20px; 
-        text-align: center; 
-    }
 }
