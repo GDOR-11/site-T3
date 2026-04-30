@@ -1,6 +1,6 @@
 /* Container que centraliza o card na tela */
 .main-container {
-    background-color: #f0f2f5;
+    background-color: #0a0e14;
     /* Fundo cinza claro */
     display: flex;
     justify-content: center;
@@ -9,7 +9,7 @@
 
 /* Estilo do Card Branco */
 .register-card {
-    background-color: #ffffff;
+    background-color: #0c1d36;
     padding: 40px;
     margin: 50px;
     border-radius: 15px;
@@ -21,7 +21,7 @@
 
 #login-title {
     font-size: 26px;
-    color: #1c1e21;
+    color: white;
     margin-bottom: 8px;
 }
 
@@ -45,7 +45,7 @@ label {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #4b4f56;
+    color: #808080;
 }
 
 input {
@@ -68,7 +68,7 @@ input:focus {
 .btn-register {
     width: 100%;
     padding: 12px;
-    background-color: #1877f2;
+    background-color: #000090;
     color: white;
     border: none;
     border-radius: 6px;
@@ -80,5 +80,5 @@ input:focus {
 }
 
 .btn-register:hover {
-    background-color: #166fe5;
+    background-color: #0000d0;
 }

@@ -2,21 +2,21 @@
     width: 100%;
     padding: 50px;
 
-    background-color: #f0f2f5;
+    background-color: #0a0e14;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .register-card {
-    background: #ffffff;
+    background: #0c1d36;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 #register-title {
-    color: #1c1e21;
+    color: white;
     font-size: 24px;
     margin-bottom: 8px;
     text-align: center;
@@ -37,7 +37,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #4b4f56;
+    color: #808080;
     font-size: 14px;
 }
 
@@ -59,7 +59,7 @@ input:focus {
 .btn-submit {
     width: 100%;
     padding: 14px;
-    background-color: #1877f2;
+    background-color: #000090;
     border: none;
     border-radius: 6px;
     color: white;
@@ -71,5 +71,5 @@ input:focus {
 }
 
 .btn-submit:hover {
-    background-color: #166fe5;
+    background-color: #0000d0;
 }
