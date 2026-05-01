@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/basic_style.css">
     <link rel="stylesheet" href="/faltas/style.css">
     <script src="/header_script.js"></script>
+    <script src="/faltas/index.js" defer></script>
 </head>
 
 <body>
@@ -52,39 +53,58 @@
                         <th>matéria</th>
                         <th>faltas injustificadas</th>
                         <th>limite</th>
-                        <th>faltas justificadas</th>
+                        <th>total de faltas</th>
                         <th>limite</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>MAT-13</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>MAT-13</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>MAT-13</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td>5</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
         <div id="buttons-container">
-            <button id="nova-materia">adicionar matéria</button>
-            <button id="nova-falta">registrar falta</button>
+            <button id="adicionar-materia" command="show-modal" commandfor="popup_adicionar-materia">adicionar matéria</button>
+            <button id="remover-materia" command="show-modal" commandfor="popup_remover-materia">remover matéria</button>
+            <button id="registrar-faltas" command="show-modal" commandfor="popup_registrar-faltas">registrar faltas</button>
         </div>
+        <dialog closedby="any" class="popup" id="popup_adicionar-materia">
+            <form method="dialog" class="popup-form" id="form_adicionar-materia">
+                <div class="input-label-container">
+                    <label for="materia">matéria:</label>
+                    <input id="materia" required></input>
+                </div>
+                <div class="input-label-container">
+                    <label for="num-aulas">número total de aulas:</label>
+                    <input id="num-aulas" required type="number" min="1"></input>
+                </div>
+                <button type="submit">adicionar matéria</button>
+            </form>
+        </dialog>
+        <dialog closedby="any" class="popup" id="popup_remover-materia">
+            <form method="dialog" class="popup-form" id="form_remover-materia">
+                <div class="input-label-container">
+                    <label for="materia">matéria:</label>
+                    <input id="materia" required></input>
+                </div>
+                <button type="submit">remover matéria</button>
+            </form>
+        </dialog>
+        <dialog closedby="any" class="popup" id="popup_registrar-faltas">
+            <form method="dialog" class="popup-form" id="form_registrar-faltas">
+                <div class="input-label-container">
+                    <label for="materia">matéria:</label>
+                    <input id="materia" required></input>
+                </div>
+                <div class="input-label-container">
+                    <label for="num-faltas">número de faltas (negativo para remover):</label>
+                    <input id="num-faltas" required type="number"></input>
+                </div>
+                <div class="input-label-container" style="flex-direction: row;">
+                    <label for="justificadas">faltas justificadas?</label>
+                    <input id="justificadas" type="checkbox"></input>
+                </div>
+                <button type="submit">registrar faltas</button>
+            </form>
+        </dialog>
     </main>
 
     <footer>

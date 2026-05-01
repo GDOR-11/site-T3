@@ -32,6 +32,15 @@ tbody tr:not(tr:last-child) {
     border-bottom: 1px solid #c5a05980;
 }
 
+td.light-warning p {
+    background-color: #ffff0080;
+    border-radius: 0.5em;
+}
+td.heavy-warning p {
+    background-color: #ff0000b0;
+    border-radius: 0.5em;
+}
+
 #buttons-container {
     width: 100%;
     margin: 5em 0em;
@@ -41,7 +50,7 @@ tbody tr:not(tr:last-child) {
     gap: 3em;
 }
 
-#buttons-container button {
+button {
     border: none;
     border-radius: 0.5em;
     padding: 0.75em 1em;
@@ -51,8 +60,30 @@ tbody tr:not(tr:last-child) {
     transition: ease 250ms background-color;
 }
 
-#buttons-container button:hover {
+button:hover {
     background-color: #0000d0;
+}
+
+.popup {
+    background-color: #0a0e14;
+    padding: 4em;
+    border-radius: 2em;
+    margin: auto;
+}
+.popup::backdrop {
+    background-color: #ffffff10;
+    backdrop-filter: blur(3px);
+}
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    color: white;
+}
+.input-label-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
 
 
