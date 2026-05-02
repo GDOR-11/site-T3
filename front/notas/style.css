@@ -1,11 +1,86 @@
 main {
+    padding: 5em 5em;
+    gap: 5em;
     display: flex;
     flex-direction: column;
-    padding: 5em 0em;
-    gap: 5em;
+    align-items: center;
 }
 
 #title {
     color: white;
     text-align: center;
+}
+
+button {
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.75em 1em;
+    cursor: pointer;
+    background-color: #000090;
+    color: white;
+    transition: ease 250ms background-color;
+}
+
+button:hover {
+    background-color: #0000d0;
+}
+
+#buttons-container {
+    width: 100%;
+    display: flex;
+    gap: 3em;
+    justify-content: stretch;
+}
+
+#buttons-container button {
+    font-size: 1.25em;
+}
+
+#buttons-container div {
+    width: 100%;
+}
+
+#editar-nota {
+    float: right;
+}
+
+#container-materias {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+}
+
+.titulo-materia {
+    font-size: 2.25em;
+}
+
+.titulo-submateria {
+    font-size: 1.6em;
+}
+
+.materia {
+    width: 100%;
+    background-color: #0c1d36;
+    padding: 2em 3em;
+    border-radius: 1em;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.titulo-materia {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+}
+
+.lista-notas {
+    list-style: none;
+}
+
+.nota {
+    font-size: 1.2em;
 }
