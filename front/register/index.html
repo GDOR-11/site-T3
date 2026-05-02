@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/basic_style.css">
     <link rel="stylesheet" href="/register/style.css">
     <script src="/header_script.js"></script>
+    <script src="/register/submission_handler.js" defer></script>
 </head>
 
 <body>
@@ -46,7 +47,7 @@
             <h1 id="register-title">Criar nova conta</h1>
             <p id="register-description">Preencha os dados abaixo para se registar.</p>
 
-            <form method="post" action="/api/auth/register">
+            <form>
                 <div class="input-group">
                     <label for="username">Usuário</label>
                     <input type="text" id="username" name="username" placeholder="Escolha um nome de usuário" required>
