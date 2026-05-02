@@ -26,7 +26,7 @@ async function get_data(user, create = true) {
 
     await fetch("/api/db/create", {
         method: "POST",
-        body: `{ "path": "notas/${user}", "content": "{}" }`
+        body: `{ "path": "notas/${user}", "content": {} }`
     });
 
     return await get_data(user, false);
