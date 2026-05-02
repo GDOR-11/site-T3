@@ -148,7 +148,7 @@ const actions: { readonly [action: string]: (req: Request, context: Context) => 
                 return new Response("Dados inexistentes", { status: 404 });
             },
             async Just(data) {
-                if (data.write = Permission.Everyone) {
+                if (data.delete = Permission.Everyone) {
                     await store.delete(body.path);
                     return new Response("", { status: 200 });
                 }

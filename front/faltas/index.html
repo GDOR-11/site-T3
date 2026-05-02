@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turma 30.3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap">
+
+    <link rel="stylesheet" href="/basic_style.css">
+    <link rel="stylesheet" href="/faltas/style.css">
+    <script src="/header_script.js"></script>
+    <script src="/faltas/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="http://www.ita.br" class="logo">
+            <img src="/images/logoita.svg" alt="Logo ITA">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/sobre_a_turma">Sobre a turma</a></li>
+                <li><a href="/materias">matérias</a></li>
+                <li><a href="/calendario">Calendário</a></li>
+
+                <li class="dropdown">
+                    <p class="dropbtn">Conta</p>
+                    <div class="dropdown-content">
+                        <div class="profile-container">
+                            <p id="header-username">Não conectado</p>
+                        </div>
+                        <a href="/login">Entrar</a>
+                        <a href="/register">Criar conta</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="title">mapa de faltas</h1>
+        <div id="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>matéria</th>
+                        <th>faltas injustificadas</th>
+                        <th>limite</th>
+                        <th>total de faltas</th>
+                        <th>limite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="buttons-container">
+            <button id="adicionar-materia" command="show-modal" commandfor="popup_adicionar-materia">adicionar matéria</button>
+            <button id="remover-materia" command="show-modal" commandfor="popup_remover-materia">remover matéria</button>
+            <button id="registrar-faltas" command="show-modal" commandfor="popup_registrar-faltas">registrar faltas</button>
+        </div>
+        <dialog closedby="any" class="popup" id="popup_adicionar-materia">
+            <form method="dialog" class="popup-form" id="form_adicionar-materia">
+                <div class="input-label-container">
+                    <label for="materia">matéria:</label>
+                    <input id="materia" required></input>
+                </div>
+                <div class="input-label-container">
+                    <label for="num-aulas">número total de aulas:</label>
+                    <input id="num-aulas" required type="number" min="1"></input>
+                </div>
+                <button type="submit">adicionar matéria</button>
+            </form>
+        </dialog>
+        <dialog closedby="any" class="popup" id="popup_remover-materia">
+            <form method="dialog" class="popup-form" id="form_remover-materia">
+                <div class="input-label-container">
+                    <label for="materia">matéria:</label>
+                    <input id="materia" required></input>
+                </div>
+                <button type="submit">remover matéria</button>
+            </form>
+        </dialog>
+        <dialog closedby="any" class="popup" id="popup_registrar-faltas">
+            <form method="dialog" class="popup-form" id="form_registrar-faltas">
+                <div class="input-label-container">
+                    <label for="materia">matéria:</label>
+                    <input id="materia" required></input>
+                </div>
+                <div class="input-label-container">
+                    <label for="num-faltas">número de faltas (negativo para remover):</label>
+                    <input id="num-faltas" required type="number"></input>
+                </div>
+                <div class="input-label-container" style="flex-direction: row;">
+                    <label for="justificadas">faltas justificadas?</label>
+                    <input id="justificadas" type="checkbox"></input>
+                </div>
+                <button type="submit">registrar faltas</button>
+            </form>
+        </dialog>
+    </main>
+
+    <footer>
+        <a href="https://www.itajr.com.br" class="logo">
+            <img src="/images/logo_itajr.svg" alt="Logo ITA">
+        </a>
+        <p style="font-size: 12px; opacity: 0.7;">© 2026 Instituto Tecnológico de Aeronáutica - São José dos Campos, SP
+        </p>
+        <nav>
+            <ul>
+                <li><a href="/perguntas_frequentes" style="font-size: 11px;">Perguntas Frequentes</a></li>
+                <li><a href="/contato" style="font-size: 11px;">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>

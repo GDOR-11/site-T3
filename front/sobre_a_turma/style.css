@@ -1,0 +1,102 @@
+
+.details-section {
+    padding: 80px 8%;
+    color: var(--pure-white);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.rep-card {
+    display: flex;
+    justify-content: center; 
+    background-color: var(--primary-blue);
+    border: 1px solid rgba(197, 160, 89, 0.3); 
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    max-width: 800px; 
+    margin: 0 auto;   
+}
+
+.rep-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 15px 40px rgba(197, 160, 89, 0.15); 
+}
+
+.rep-info {
+    padding: 40px;
+    text-align: center;
+}
+
+.rep-info h3 {
+    color: var(--accent-gold);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.rep-info .role {
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--pure-white);
+    opacity: 0.7;
+}
+
+.rep-info p {
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.student-card {
+    background-color: var(--primary-blue);
+    border: 1px solid rgba(197, 160, 89, 0.1);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+}
+
+
+.student-card h4 {
+    color: var(--accent-gold);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.student-card p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .details-section {
+        padding: 50px 5%;
+    }
+
+    .rep-info {
+        padding: 30px 20px;
+    }
+}
