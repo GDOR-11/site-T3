@@ -161,6 +161,9 @@ col {
 
 tr>* {
     padding: 0.5em 2em;
+    @media screen and (width < 50em) {
+        padding: 0.5em 1em;
+    }
 }
 
 tr>*:first-child:not(tfoot *) {
