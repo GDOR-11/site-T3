@@ -199,7 +199,8 @@ footer {
         width: 100%;
     }
 
-    header nav ul li a {
+    header nav ul li a,
+    header nav ul li p {
         font-size: 10px;
         /* Fonte menor para caber na tela */
         letter-spacing: 0.5px;
