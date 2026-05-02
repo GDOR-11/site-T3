@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/basic_style.css">
     <link rel="stylesheet" href="/notas/style.css">
     <script src="/header_script.js"></script>
+    <script src="/notas/index.js" type="module"></script>
 </head>
 
 <body>
@@ -44,65 +45,7 @@
 
     <main>
         <h1 id="title">Acompanhamento de notas</h1>
-        <!-- nomenclatura: -->
-        <!-- materia simples: so tem teoria (e.x.: MAT-13) -->
-        <!-- materia composta: tem teoria e lab (e.x.: CES-10) -->
-        <!-- submateria: teoria ou lab de uma materia composta (e.x.: CES-10 teoria) -->
         <div id="container-materias">
-            <div class="materia materia-simples">
-                <h1 class="titulo-materia">MAT-13</h1>
-                <ul class="lista-notas">
-                    <li class="nota">P1: 3,4</li>
-                    <li class="nota">P2: 8,7</li>
-                    <li class="nota">exame: 7,6</li>
-                </ul>
-            </div>
-            <div class="materia materia-composta">
-                <h1 class="titulo-materia">CES-10</h1>
-                <div class="submateria submateria-teoria">
-                    <h1 class="titulo-submateria">CES-10 teoria</h1>
-                    <ul class="lista-notas">
-                        <li class="nota">P1: 3,4</li>
-                        <li class="nota">P2: 8,7</li>
-                        <li class="nota">exame: 7,6</li>
-                    </ul>
-                </div>
-                <div class="submateria submateria-teoria">
-                    <h1 class="titulo-submateria">CES-10 lab</h1>
-                    <ul class="lista-notas">
-                        <li class="nota">Lab1: 10</li>
-                        <li class="nota">Lab2: 8,3</li>
-                        <li class="nota">Lab3: 9,5</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="materia materia-composta">
-                <h1 class="titulo-materia">CES-10</h1>
-                <div class="submateria submateria-teoria">
-                    <h1 class="titulo-submateria">CES-10 teoria</h1>
-                    <ul class="lista-notas">
-                        <li class="nota">P1: 3,4</li>
-                        <li class="nota">P2: 8,7</li>
-                        <li class="nota">exame: 7,6</li>
-                    </ul>
-                </div>
-                <div class="submateria submateria-teoria">
-                    <h1 class="titulo-submateria">CES-10 lab</h1>
-                    <ul class="lista-notas">
-                        <li class="nota">Lab1: 10</li>
-                        <li class="nota">Lab2: 8,3</li>
-                        <li class="nota">Lab3: 9,6</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="materia materia-simples">
-                <h1 class="titulo-materia">MAT-13</h1>
-                <ul class="lista-notas">
-                    <li class="nota">P1: 3,4</li>
-                    <li class="nota">P2: 8,7</li>
-                    <li class="nota">exame: 7,6</li>
-                </ul>
-            </div>
         </div>
         <div id="buttons-container">
             <div><button id="editar-nota">editar nota</button></div>

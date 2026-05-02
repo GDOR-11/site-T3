@@ -49,6 +49,10 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3em;
+
+    @media screen and (width < 70em) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .titulo-materia {
@@ -77,10 +81,27 @@ button:hover {
     text-align: center;
 }
 
-.lista-notas {
-    list-style: none;
+.titulo-submateria {
+    text-align: center;
 }
 
-.nota {
+.lista-notas {
+    list-style: none;
+    padding-bottom: 2.5em;
+    text-align: center;
+}
+
+.materia-simples .lista-notas {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.media, .nota-necessaria {
     font-size: 1.2em;
+    text-align: center;
+}
+
+.nota-necessaria {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
