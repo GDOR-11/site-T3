@@ -1,0 +1,11 @@
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 5em 0em;
+    gap: 5em;
+}
+
+#title {
+    color: white;
+    text-align: center;
+}
