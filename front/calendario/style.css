@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    /*alinhamento do calendário ao centro da tela*/
+}
+.container iframe {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    
+}
+main {
+    background-color: #f0f2f5;
+} 
