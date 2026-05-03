@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turma 30.3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap">
+
+    <link rel="stylesheet" href="/basic_style.css">
+    <link rel="stylesheet" href="/notas/style.css">
+    <script src="/header_script.js"></script>
+    <script src="/notas/index.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <a href="http://www.ita.br" class="logo">
+            <img src="/images/logoita.svg" alt="Logo ITA">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/sobre_a_turma">Sobre a turma</a></li>
+                <li><a href="/materias">Matérias</a></li>
+                <li><a href="/calendario">Calendário</a></li>
+
+                <li class="dropdown">
+                    <p class="dropbtn">Conta</p>
+                    <div class="dropdown-content">
+                        <div class="profile-container">
+                            <p id="header-username">Não conectado</p>
+                        </div>
+                        <a href="/login">Entrar</a>
+                        <a href="/register">Criar conta</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="title">Acompanhamento de notas</h1>
+        <div id="container-materias">
+        </div>
+        <div id="buttons-container">
+            <button id="adicionar-materia" command="show-modal" commandfor="dialog-adicionar-materia">adicionar matéria</button>
+            <button id="remover-materia" command="show-modal" commandfor="dialog-remover-materia">remover matéria</button>
+            <button id="editar-notas" command="show-modal" commandfor="dialog-editar-notas-1">editar notas</button>
+        </div>
+        <dialog id="dialog-remover-materia" closedby="any">
+            <h1 class="dialog-title">Remover matéria</h1>
+            <form method="dialog" id="form-remover-materia">
+                <div class="input-label-container">
+                    <label for="select-remover-materia">matéria</label>
+                    <select id="select-remover-materia"></select>
+                </div>
+                <button id="botao-remover-materia" type="submit">remover matéria</button>
+            </form>
+        </dialog>
+        <dialog id="dialog-adicionar-materia" closedby="any">
+            <h1 class="dialog-title">Adicionar matéria</h1>
+            <p>Para configurar as provas, edite as notas desta matéria após criar ela.</p>
+            <form method="dialog" id="form-adicionar-materia">
+                <div class="input-label-container">
+                    <label for="adicionar-materia_materia">matéria</label>
+                    <input id="adicionar-materia_materia" required></input>
+                </div>
+                <div class="checkbox-label-container">
+                    <label for="adicionar-materia_lab">lab?</label>
+                    <input id="adicionar-materia_lab" type="checkbox"></input>
+                </div>
+                <div class="input-label-container" id="adicionar-materia_media-container" style="display: none;">
+                    <label for="adicionar-materia_media">média</label>
+                    <select id="adicionar-materia_media">
+                        <option value="aritmetica">aritmética</option>
+                        <option value="geometrica">geométrica</option>
+                    </select>
+                </div>
+                <button id="botao-adicionar-materia" type="submit">adicionar matéria</button>
+            </form>
+        </dialog>
+        <dialog id="dialog-editar-notas-1" closedby="any">
+            <h1 class="dialog-title">Editar notas</h1>
+            <form method="dialog" id="form-editar-notas-1">
+                <div class="input-label-container">
+                    <label for="select-editar-notas-1">matéria</label>
+                    <select id="select-editar-notas-1"></select>
+                </div>
+                <button id="botao-editar-notas-1" type="submit">editar notas</button>
+            </form>
+        </dialog>
+        <dialog id="dialog-editar-notas-2" closedby="any">
+            <h1 class="dialog-title">Editar notas</h1>
+            <form method="dialog" id="form-editar-notas-2">
+                <div class="input-label-container" id="container-peso-submateria">
+                    <label for="editar-notas-2_peso">peso da submatéria:</label>
+                    <input id="editar-notas-2_peso" required type="number" value="1" min="0" step="any"></input>
+                </div>
+                <table>
+                    <colgroup>
+                        <col id="prova-column" />
+                        <col id="nota-column" />
+                        <col id="peso-column" />
+                        <col id="delete-column" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>prova</th>
+                            <th>nota</th>
+                            <th>peso</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="4"><button id="novo-item" type="button">novo item</button></th>
+                        </tr>
+                    </tfoot>
+                </table>
+                <button id="botao-editar-notas-2" type="submit">salvar mudanças</button>
+            </form>
+        </dialog>
+    </main>
+
+    <footer>
+        <a href="https://www.itajr.com.br" class="logo">
+            <img src="/images/logo_itajr.svg" alt="Logo ITA">
+        </a>
+        <p style="font-size: 12px; opacity: 0.7;">© 2026 Instituto Tecnológico de Aeronáutica - São José dos Campos, SP
+        </p>
+        <nav>
+            <ul>
+                <li><a href="/perguntas_frequentes" style="font-size: 11px;">Perguntas Frequentes</a></li>
+                <li><a href="/contato" style="font-size: 11px;">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turma 3 | ITA</title>
+    <title>Desenvolvedores - Contatos</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap">
+
     <link rel="stylesheet" href="/basic_style.css">
-    <link rel="stylesheet" href="/calendario/style.css">
+    <link rel="stylesheet" href="/contato/style.css">
     <script src="/header_script.js"></script>
 </head>
 
 <body>
-<header>
+    <header>
         <a href="http://www.ita.br" class="logo">
             <img src="/images/logoita.svg" alt="Logo ITA">
         </a>
@@ -40,18 +42,46 @@
     </header>
 
     <main>
-        <div class="container">
-            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FSao_Paulo&showPrint=0&showTz=0&showCalendars=0&title=Tarefas%20da%20T3&src=cmVuYXRvbGltYWJlbGxvQGdtYWlsLmNvbQ&src=YTg1OThjNTkxNDM2YWQ4MmRhN2NlMzk3MzMzMmRkMTUxZDAyZDkwOTBjNzY2NDRhNmFiZTEzODVlMzE0ZDM5OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cHQtYnIuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23f4511e&color=%230b8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>    
-            <!-- iframe do google calendar, onde o calendário da turma é exibido -->
-        </div>
+        <section class="dev-section">
+            <h2 class="title-main">Equipe de <span style="color: var(--accent-gold);">Desenvolvimento</span></h2>
+            
+            <div class="dev-grid">
+                <div class="dev-card">
+                    <h3>Latrô</h3>
+                    <p>207G</p>
+                    <p>📞 (11) 97668-5824</p>
+                    <span class="vaga-tag">Vaga B</span>
+                </div>
+                
+                <div class="dev-card">
+                    <h3>Sheldon</h3>
+                    <p>302G</p>
+                    <p>📞 (48) 99159-8850</p>
+                    <span class="vaga-tag">Vaga B</span>
+                </div>
+
+                <div class="dev-card">
+                    <h3>Ecstasy</h3>
+                    <p>303G</p>
+                    <p>📞 (18) 99762-5600</p>
+                    <span class="vaga-tag">Vaga C</span>
+                </div>
+
+                <div class="dev-card">
+                    <h3>Alexa</h3>
+                    <p>205G</p>
+                    <p>📞 (42) 99864-8662</p>
+                    <span class="vaga-tag">Vaga B</span>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
     <footer>
         <a href="https://www.itajr.com.br" class="logo">
-            <img src="/images/logo_itajr.svg" alt="Logo ITA">
+            <img src="/images/logo_itajr.svg" alt="Logo ITA JR">
         </a>
-        <p style="font-size: 12px; opacity: 0.7;">© 2026 Instituto Tecnológico de Aeronáutica - São José dos Campos, SP
-        </p>
+        <p style="font-size: 12px; opacity: 0.7;">© 2026 Instituto Tecnológico de Aeronáutica - São José dos Campos, SP</p>
         <nav>
             <ul>
                 <li><a href="/perguntas_frequentes" style="font-size: 11px;">Perguntas Frequentes</a></li>
@@ -61,5 +91,4 @@
     </footer>
 
 </body>
-
 </html>
