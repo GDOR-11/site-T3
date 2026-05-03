@@ -1,6 +1,6 @@
 /** @typedef {{ peso: number, nota: number }} Prova */
 /** @typedef {{ tipo: "simples", provas: { [prova: string]: Prova } }} MateriaSimples */
-/** @typedef {{ provas: { [prova: string]: Prova } }} Submateria */
+/** @typedef {{ peso: number, provas: { [prova: string]: Prova } }} Submateria */
 /** @typedef {{ tipo: "composta", teoria: Submateria, lab: Submateria, media: "aritmetica" | "geometrica" }} MateriaComposta */
 /** @typedef {MateriaSimples | MateriaComposta} Materia */
 /** @typedef {{ [materia: string]: Materia }} Data */
@@ -199,12 +199,14 @@ function div_materia_composta(materia, dados) {
     const info_lab = informacoes_provas(dados.lab.provas);
     if (info_teoria.peso_total === 0 || info_lab.peso_total === 0) return div;
 
+    const media_aritmetica = (t, l) => (t * dados.teoria.peso + l * dados.lab.peso) / (dados.teoria.peso + dados.lab.peso);
+    const media_geometrica = (t, l) => Math.pow((t ** dados.teoria.peso) * (l ** dados.lab.peso), 1 / (dados.teoria.peso + dados.lab.peso));
     const media_min = dados.media === "aritmetica" ?
-        (info_teoria.media_min + info_lab.media_min) / 2 :
-        Math.sqrt(info_teoria.media_min * info_lab.media_min);
+        media_aritmetica(info_teoria.media_min, info_lab.media_min) :
+        media_geometrica(info_teoria.media_min, info_lab.media_min);
     const media_max = dados.media === "aritmetica" ?
-        (info_teoria.media_max + info_lab.media_max) / 2 :
-        Math.sqrt(info_teoria.media_max * info_lab.media_max);
+        media_aritmetica(info_teoria.media_max, info_lab.media_max) :
+        media_geometrica(info_teoria.media_max, info_lab.media_max);
 
     const p_media_min = document.createElement("p");
     p_media_min.className = "media";
@@ -221,11 +223,15 @@ function div_materia_composta(materia, dados) {
             dados.teoria.provas[ultima_prova] :
             dados.lab.provas[ultima_prova];
         const info = ultima_prova === info_teoria.ultima_prova ? info_teoria : info_lab;
+        const peso = ultima_prova == info_teoria.ultima_prova ? dados.teoria.peso : dados.lab.peso;
         const outra_media = ultima_prova === info_teoria.ultima_prova ? info_lab.media_min : info_teoria.media_min;
+        const outro_peso = ultima_prova === info_teoria.ultima_prova ? dados.lab.peso : dados.teoria.peso;
 
+        // O * pO + S * pS = (pO + pS) * x
+        // O ** pO * S ** pS = x ** (pO + pS)
         const nota_necessaria = dados.media === "aritmetica" ?
-            x => (2 * x - outra_media - info.media_min) * info.peso_total / prova.peso :
-            x => (x * x / outra_media - info.media_min) * info.peso_total / prova.peso;
+            x => (((peso + outro_peso) * x - outra_media * outro_peso) / peso - info.media_min) * info.peso_total / prova.peso :
+            x => (Math.pow(x ** (peso + outro_peso) / outra_media ** outro_peso, 1 / peso) - info.media_min) * info.peso_total / prova.peso;
 
         const nota_50 = document.createElement("p");
         nota_50.className = "nota-necessaria";
@@ -315,8 +321,8 @@ document.getElementById("botao-adicionar-materia").addEventListener("click", asy
         data[materia] = {
             tipo: "composta",
             media: document.getElementById("adicionar-materia_media").value,
-            lab: { provas: {} },
-            teoria: { provas: {} }
+            lab: { peso: 1, provas: {} },
+            teoria: { peso: 1, provas: {} }
         };
     } else {
         data[materia] = {
@@ -331,11 +337,17 @@ document.getElementById("botao-adicionar-materia").addEventListener("click", asy
 
 const tbody = document.querySelector("tbody");
 document.getElementById("botao-editar-notas-1").addEventListener("click", () => {
-    document.getElementById("dialog-editar-notas-2").showModal();
     const value = document.getElementById("select-editar-notas-1").value;
     const materia = value.split("\\")[0];
     const submateria = value.split("\\")[1];
     const provas = data[materia].tipo === "simples" ? data[materia].provas : data[materia][submateria].provas;
+
+    document.getElementById("form-editar-notas-2").reset();
+    if (data[materia].tipo === "composta") {
+        document.getElementById("editar-notas-2_peso").value = data[materia][submateria].peso;
+    }
+    document.getElementById("container-peso-submateria").style.display = data[materia].tipo === "simples" ? "none" : "flex";
+    document.getElementById("dialog-editar-notas-2").showModal();
 
     tbody.innerHTML = "";
     for (const prova in provas) {
@@ -345,12 +357,12 @@ document.getElementById("botao-editar-notas-1").addEventListener("click", () => 
     }
 });
 document.getElementById("botao-editar-notas-2").addEventListener("click", async () => {
-    document.getElementById("dialog-editar-notas-2").showModal();
     const value = document.getElementById("select-editar-notas-1").value;
     const materia = value.split("\\")[0];
     const submateria = value.split("\\")[1];
     const provas = data[materia].tipo === "simples" ? data[materia].provas : data[materia][submateria].provas;
     for (const prova in provas) delete provas[prova];
+
 
     for (const tr of tbody.children) {
         const prova = tr.children[0].children[0].value;
@@ -358,6 +370,9 @@ document.getElementById("botao-editar-notas-2").addEventListener("click", async 
         const peso  = Number(tr.children[2].children[0].value);
 
         provas[prova] = { nota, peso };
+    }
+    if (data[materia].tipo === "composta") {
+        data[materia][submateria].peso = Number(document.getElementById("editar-notas-2_peso").value);
     }
 
     await set_data(user, data);
