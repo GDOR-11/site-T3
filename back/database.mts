@@ -15,15 +15,13 @@ type Data = {
     delete: Permission
 };
 
-const store = getStore("data");
-
 async function getData(path: string): Promise<Maybe<Data>> {
-    const data = await store.get(path, { consistency: "strong", type: "json" });
+    const data = await getStore("data").get(path, { consistency: "strong", type: "json" });
     if (data === null) return Maybe.nothing();
     else return Maybe.just(data);
 }
 async function setData(path: string, data: Data) {
-    await store.setJSON(path, data);
+    await getStore("data").setJSON(path, data);
 }
 
 const actions: { readonly [action: string]: (req: Request, context: Context) => Promise<Response> } = {
@@ -149,7 +147,7 @@ const actions: { readonly [action: string]: (req: Request, context: Context) => 
             },
             async Just(data) {
                 if (data.delete = Permission.Everyone) {
-                    await store.delete(body.path);
+                    await getStore("data").delete(body.path);
                     return new Response("", { status: 200 });
                 }
                 return await (await validateSessionId(context)).match({
@@ -160,7 +158,7 @@ const actions: { readonly [action: string]: (req: Request, context: Context) => 
                         if (data.owner !== username) {
                             return new Response("Não autorizado", { status: 403 });
                         }
-                        await store.delete(body.path);
+                        await getStore("data").delete(body.path);
                         return new Response("", { status: 200 });
                     }
                 });

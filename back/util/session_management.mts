@@ -8,19 +8,17 @@ type Session = {
     expiration: number
 };
 
-const sessions = getStore("sessions");
-
 async function getSession(session_id: string): Promise<Session | null> {
-    return await sessions.get(session_id, { consistency: "strong", type: "json" }) as Session | null;
+    return await getStore("sessions").get(session_id, { consistency: "strong", type: "json" }) as Session | null;
 }
 async function setSession(session_id: string, session: Session) {
-    await sessions.setJSON(session_id, session);
+    await getStore("sessions").setJSON(session_id, session);
 }
 
 export async function cleanSessions() {
-    for (let { key: session_id } of (await sessions.list()).blobs) {
+    for (let { key: session_id } of (await getStore("sessions").list()).blobs) {
         if (Date.now() > (await getSession(session_id))!.expiration) {
-            await sessions.delete(session_id);
+            await getStore("sessions").delete(session_id);
         }
     }
 }
@@ -50,7 +48,7 @@ export function setCookies(context: Context, session_id: string) {
 export async function clearSession(context: Context) {
     const session_id = context.cookies.get("__Host-Http-sessionid");
     if (session_id === undefined) return;
-    await sessions.delete(session_id);
+    await getStore("sessions").delete(session_id);
 
     context.cookies.set({
         name: "__Host-Http-sessionid",
