@@ -6,7 +6,7 @@ form.addEventListener("submit", async e => {
 
     const username = form.elements[0].value;
     const password = form.elements[1].value;
-    const response = await fetch("/api/auth/login", {
+    const response = await fetch("/api/auth/register", {
         method: "POST",
         body: `username=${username}&password=${password}`
     });
