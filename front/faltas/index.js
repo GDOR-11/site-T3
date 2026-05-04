@@ -118,7 +118,7 @@ async function set_data(user, data) {
             faltas_just: 0,
             faltas_injust: 0
         };
-        set_data(user, data);
+        await set_data(user, data);
 
         window.location.reload();
     });
@@ -131,7 +131,7 @@ async function set_data(user, data) {
         }
 
         delete data[materia];
-        set_data(user, data);
+        await set_data(user, data);
 
         window.location.reload();
     });
