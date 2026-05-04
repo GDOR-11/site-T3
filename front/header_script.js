@@ -5,7 +5,8 @@ function createLink(text, href) {
     return a;
 }
 
-fetch("/api/auth/getuser").then(response => response.text()).then(username => {
+setTimeout(async () => {
+    const username = await (await fetch("/api/auth/getuser")).text();
     if (username !== "") {
         document.getElementById("header-username").innerText = username;
         document.querySelector("div.dropdown-content > [href=\"/login\"]").innerText = "Trocar conta";
@@ -14,4 +15,4 @@ fetch("/api/auth/getuser").then(response => response.text()).then(username => {
         document.querySelector("div.dropdown-content").append(createLink("Faltas", "/faltas"));
         document.querySelector("div.dropdown-content").append(createLink("Sair", "/api/auth/logout"));
     }
-});
+}, 500);
