@@ -12,6 +12,7 @@ form.addEventListener("submit", async e => {
     });
 
     if (response.ok) {
+        await new Promise(r => setTimeout(r, 500));
         window.location.assign("/");
         return;
     }

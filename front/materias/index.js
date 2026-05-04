@@ -117,6 +117,7 @@ function create_tr(item, texto) {
                 content: data
             })
         });
+        await new Promise(r => setTimeout(r, 500));
 
         window.location.reload();
     });

@@ -28,6 +28,7 @@ async function get_data(user, create = true) {
         method: "POST",
         body: `{ "path": "notas/${user}", "content": {} }`
     });
+    await new Promise(r => setTimeout(r, 500));
 
     return await get_data(user, false);
 }
@@ -44,6 +45,7 @@ async function set_data(user, data) {
             content: data
         })
     });
+    await new Promise(r => setTimeout(r, 500));
 }
 
 /**

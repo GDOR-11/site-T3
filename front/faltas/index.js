@@ -45,6 +45,7 @@ async function set_data(user, data) {
             content: JSON.stringify(data)
         })
     });
+    await new Promise(r => setTimeout(r, 500));
 }
 
 (async () => {
