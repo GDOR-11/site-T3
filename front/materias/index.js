@@ -46,7 +46,7 @@ function create_tr(item, texto) {
 
     const container = document.getElementById("content-container");
     if (Object.keys(data).length === 0) {
-        container.innerText = "O RD é omisso e ainda não colocou nada aqui";
+        container.innerText = "Nada ainda";
     }
 
     for (const materia in data) {
